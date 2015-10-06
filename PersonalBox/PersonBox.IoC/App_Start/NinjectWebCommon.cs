@@ -1,22 +1,19 @@
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PersonalBox.MVC.App_Start.NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(PersonalBox.MVC.App_Start.NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(PersonBox.IoC.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(PersonBox.IoC.App_Start.NinjectWebCommon), "Stop")]
 
-namespace PersonalBox.MVC.App_Start
+namespace PersonBox.IoC.App_Start
 {
     using System;
     using System.Web;
 
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-    using Ninject.Web.Common;
+
     using Ninject;
-    using Domain.Interfaces.Repositories;
-    using Infra.Repositories;
+    using Ninject.Web.Common;
 
     public static class NinjectWebCommon 
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
-
-        public static object Bind { get; private set; }
 
         /// <summary>
         /// Starts the application
@@ -64,10 +61,6 @@ namespace PersonalBox.MVC.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        
-            kernel.Bind(typeof(IRepository<>)).To(typeof(IRepository<>));
-            kernel.Bind<IClientRepository>().To<ClientRepository>();
-
-        }
+        }        
     }
 }

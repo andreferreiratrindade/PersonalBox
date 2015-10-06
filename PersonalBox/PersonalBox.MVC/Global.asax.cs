@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonalBox.MVC.App_Start.AutoMapper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,8 @@ namespace PersonalBox.MVC
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            AutoMapperConf.RegisterAutoMarppings();
         }
     }
 }

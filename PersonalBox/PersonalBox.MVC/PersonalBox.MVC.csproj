@@ -44,6 +44,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.0.4.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.0.4\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Iesi.Collections, Version=4.0.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
       <HintPath>..\packages\Iesi.Collections.4.0.0.4000\lib\net40\Iesi.Collections.dll</HintPath>
       <Private>True</Private>
@@ -186,6 +190,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\AutoMapper\AutoMapperConf.cs" />
+    <Compile Include="App_Start\AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="App_Start\AutoMapper\ViewModelToDomainMappingProfile.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -284,6 +291,14 @@
     <ProjectReference Include="..\PersonalBox.Application\PersonalBox.Application.csproj">
       <Project>{774a81d2-deed-4828-a2ff-5ba5a8d682e1}</Project>
       <Name>PersonalBox.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalBox.Domain\PersonalBox.Domain.csproj">
+      <Project>{d4b4f38a-59aa-4ea1-b54d-714373df5d2f}</Project>
+      <Name>PersonalBox.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PersonalBox.Infra\PersonalBox.Infra.csproj">
+      <Project>{c8f174b6-8508-4d4a-9f59-0d3528c5c5b2}</Project>
+      <Name>PersonalBox.Infra</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
