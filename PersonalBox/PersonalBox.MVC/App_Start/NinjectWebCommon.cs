@@ -11,8 +11,15 @@ namespace PersonalBox.MVC.App_Start
     using Ninject;
     using Domain.Interfaces.Repositories;
     using Infra.Repositories;
+    using Domain.Interfaces.AppServices;
+    using Domain.AppServices;
+    using Application.Appications.Abstracts;
+    using Application.Appications;
+    using Application.Appications.Users;
+    using Services.Clients;
+    using Services.Abstracts;
 
-    public static class NinjectWebCommon 
+    public static class NinjectWebCommon
     {
         private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
@@ -21,13 +28,13 @@ namespace PersonalBox.MVC.App_Start
         /// <summary>
         /// Starts the application
         /// </summary>
-        public static void Start() 
+        public static void Start()
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
             bootstrapper.Initialize(CreateKernel);
         }
-        
+
         /// <summary>
         /// Stops the application.
         /// </summary>
@@ -35,7 +42,7 @@ namespace PersonalBox.MVC.App_Start
         {
             bootstrapper.ShutDown();
         }
-        
+
         /// <summary>
         /// Creates the kernel that will manage your application.
         /// </summary>
@@ -64,10 +71,21 @@ namespace PersonalBox.MVC.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-        
-            kernel.Bind(typeof(IRepository<>)).To(typeof(IRepository<>));
-            kernel.Bind<IClientRepository>().To<ClientRepository>();
+            // Repositories
+            kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
+            kernel.Bind<IUserRepository>().To<UserRepository>();
 
+            // AppServices
+            kernel.Bind(typeof(IAppService<>)).To(typeof(AppService<>));
+            kernel.Bind<IUserAppService>().To<UserAppService>();
+
+            // AppBases
+            kernel.Bind(typeof(IAppBase<>)).To(typeof(AppBase<>));
+            kernel.Bind<IUserApp>().To<UserApp>();
+
+
+            // Services           
+            kernel.Bind<IUserService>().To<UserService>();
         }
     }
 }

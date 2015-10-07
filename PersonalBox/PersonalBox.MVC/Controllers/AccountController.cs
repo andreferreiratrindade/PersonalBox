@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using PersonalBox.MVC.Models;
+using PersonalBox.MVC.Services.Abstracts;
 
 namespace PersonalBox.MVC.Controllers
 {
@@ -17,15 +18,18 @@ namespace PersonalBox.MVC.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private readonly IUserService _userService;
 
-        public AccountController()
+        public AccountController(IUserService userService)
         {
+            _userService = userService;
         }
 
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
+        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager
+            , IUserService clientService)
         {
             UserManager = userManager;
-            SignInManager = signInManager;
+            SignInManager = signInManager;           
         }
 
         public ApplicationSignInManager SignInManager
@@ -156,7 +160,9 @@ namespace PersonalBox.MVC.Controllers
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    model.UserIdentityId = user.Id;
+                  var returnOperation =  _userService.SetCreate(model);
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

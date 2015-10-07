@@ -12,7 +12,7 @@ namespace PersonalBox.Infra.Context
 {
    public class PersonalBoxContext : DbContext
     {
-        public DbSet<Client> Clientes { get; set; }
+        public DbSet<User> Users { get; set; }
         public PersonalBoxContext():base("PersonBoxDB")
         {
         }
@@ -36,13 +36,11 @@ namespace PersonalBox.Infra.Context
             modelBuilder.Properties<string>()
                 .Configure(x => x.HasMaxLength(100));
 
-            modelBuilder.Configurations.Add(new ClientConfiguration());
+            modelBuilder.Configurations.Add(new UserConfiguration());
         }
 
         public override int SaveChanges()
         {
-
-
             return base.SaveChanges();
         }
     }

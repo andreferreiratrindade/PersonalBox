@@ -66,19 +66,25 @@ namespace PersonalBox.MVC.Models
     {
         [Required]
         [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "E-mail")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Display(Name = "Nome")]
+        public string Name { get; set; }
+
+        [Required]
+        [StringLength(100, ErrorMessage = "O {0} deve ter pelo menos {2} caracteres.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "Senha")]
         public string Password { get; set; }
 
+
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "Confirma Senha")]
+        [Compare("Password", ErrorMessage = "O campo SENHA e CONFIRMA SENHA, devem ser identicos.")]
         public string ConfirmPassword { get; set; }
+        public string UserIdentityId { get; internal set; }
     }
 
     public class ResetPasswordViewModel

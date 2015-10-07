@@ -3,7 +3,7 @@
 
 namespace PersonalBox.Domain.Interfaces.Repositories
 {
-    public interface IClientRepository : IRepository<Client>
+    public interface IUserRepository : IRepository<User>
     {
     }
 }

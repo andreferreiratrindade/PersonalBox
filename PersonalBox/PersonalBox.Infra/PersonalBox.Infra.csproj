@@ -50,10 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\PersonalBoxContext.cs" />
-    <Compile Include="Mapping\ClientConfiguration.cs" />
+    <Compile Include="Mapping\UserConfiguration.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ClientRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
   </ItemGroup>
   <ItemGroup>

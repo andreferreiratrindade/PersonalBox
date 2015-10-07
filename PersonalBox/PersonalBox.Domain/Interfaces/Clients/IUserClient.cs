@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonalBox.Domain.Interfaces.Clients
 {
-   public interface IClientClient
+   public interface IUserClient
     {
     }
 }

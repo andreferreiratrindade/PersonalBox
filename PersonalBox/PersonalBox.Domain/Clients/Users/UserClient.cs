@@ -3,7 +3,7 @@
 
 namespace PersonalBox.Domain.Clients.Clients
 {
-   public class ClientClient : IClientClient
+   public class UserClient : IUserClient
     {
     }
 }

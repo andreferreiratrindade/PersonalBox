@@ -31,7 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Appications\Abstracts\IAppBase.cs" />
+    <Compile Include="Appications\Abstracts\IUserApp.cs" />
     <Compile Include="Appications\AppBase.cs" />
+    <Compile Include="Appications\Users\UserApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
