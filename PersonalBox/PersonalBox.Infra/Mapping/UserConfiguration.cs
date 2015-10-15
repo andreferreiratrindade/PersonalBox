@@ -14,6 +14,8 @@ namespace PersonalBox.Infra.Mapping
 
             Property(x => x.UserIdentityId)
                 .IsRequired(); 
+
+            
         }
     }
 }

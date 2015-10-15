@@ -37,6 +37,7 @@ namespace PersonalBox.Infra.Context
                 .Configure(x => x.HasMaxLength(100));
 
             modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new TransacaoFincanceiraConfiguration());
         }
 
         public override int SaveChanges()

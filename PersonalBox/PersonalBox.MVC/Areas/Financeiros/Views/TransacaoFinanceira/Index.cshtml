@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Transações Pessoais";
+    Layout = "~/Views/Shared/DashBoard/_LayoutDashBoard.cshtml";
+}
+
+<div class="page-title">
+    <div class="title_left">
+        <h3>
+            @ViewBag.Title
+
+        </h3>
+    </div>
+
+    <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+            <div class="input-group">
+
+                Saldo Atual R$ 1.000,00
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="x_panel">
+            <div class="x_title">
+                <h2>Transações <small>periodo 01/10/2015 até atual</small></h2>
+
+                <div class="clearfix"></div>
+            </div>
+            <div class="x_content">
+                <div class="btn-group">
+                    <button class="btn btn-default">Jan</button>
+                    <button class="btn btn-default">Fev</button>
+                    <button class="btn btn-default">Mar</button>
+                    <button class="btn btn-default">Abr</button>
+                    <button class="btn btn-default">Mai</button>
+                    <button class="btn btn-default">Jun</button>
+                    <button class="btn btn-default">Jul</button>
+                    <button class="btn btn-default">Ago</button>
+                    <button class="btn btn-default">Out</button>
+                    <button class="btn btn-default">Nov</button>
+                    <button class="btn btn-default">Dez</button>
+
+                </div>
+
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Valor</th>
+                            <th>Data Referência</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody data-bind="Transacoes">
+                        <tr class="success">
+                            <td>Crédito</td>
+                            <td>R$ 1.000,00</td>
+                            <td>15/10/2015</td>
+                            <td>Salário</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+  @Scripts.Render("~/bundles/knockout")

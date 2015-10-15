@@ -1,13 +1,12 @@
 ﻿using PersonalBox.Domain.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using PersonalBox.Domain.Utils;
 
 namespace PersonalBox.Application.Appications.Abstracts
 {
-   public interface IUserApp : IAppBase<User> 
+    public interface IUserApp
     {
+
+        ReturnOperation AdicionaUsuario(User user);
+
     }
 }

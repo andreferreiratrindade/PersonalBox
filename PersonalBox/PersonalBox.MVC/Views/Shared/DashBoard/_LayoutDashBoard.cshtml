@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>@ViewBag.Title </title>
+
+    <!-- Bootstrap core CSS -->
+    @Styles.Render("~/Content/gentelella/css")
+
+</head>
+<body class="nav-md">
+
+    <div class="container body">
+
+        <div class="main_container">
+            <!--Menu lateral-->
+            @Html.Partial("_MenuLateral")
+            <!-- top navigation -->
+            @Html.Partial("_Topo")
+
+            <!--Corpo-->
+
+            <div class="right_col" role="main">
+               
+                <div class="">
+                    @RenderBody()
+                    <hr />
+                </div>
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @Scripts.Render("~/bundles/gentelella")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

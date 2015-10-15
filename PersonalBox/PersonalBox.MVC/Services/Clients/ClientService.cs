@@ -22,7 +22,7 @@ namespace PersonalBox.MVC.Services.Clients
 
             var client = Mapper.Map<User>(model);
 
-            _userApp.Add(client);
+            returnOperation = _userApp.AdicionaUsuario(client);
 
             return returnOperation;
         }

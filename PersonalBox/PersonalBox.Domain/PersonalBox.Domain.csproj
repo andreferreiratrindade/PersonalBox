@@ -30,18 +30,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AppServices\UserAppService.cs" />
-    <Compile Include="Interfaces\AppServices\IAppService.cs" />
-    <Compile Include="Interfaces\AppServices\IUserAppService.cs" />
+    <Compile Include="Clients\TransacaoFinanceiras\TransacaoFinanceiraDTO.cs" />
+    <Compile Include="Entities\Constants\TipoTransacaoFinanceira.cs" />
+    <Compile Include="Entities\TransacaoFinanceira.cs" />
     <Compile Include="Interfaces\Clients\IUserClient.cs" />
-    <Compile Include="Interfaces\Clients\ITransacaoFincanceiraClient.cs" />
+    <Compile Include="Interfaces\Clients\ITransacaoFinanceiraClient.cs" />
     <Compile Include="Clients\Users\UserClient.cs" />
     <Compile Include="Clients\TransacaoFinanceiras\TransacaoFincanceiraClient.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Interfaces\Repositories\ITransacaoFinanceiraRepository.cs" />
     <Compile Include="Interfaces\Repositories\IUserRepository.cs" />
     <Compile Include="Interfaces\Repositories\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="AppServices\AppService.cs" />
     <Compile Include="Utils\ReturnOperation.cs" />
   </ItemGroup>
   <ItemGroup />
