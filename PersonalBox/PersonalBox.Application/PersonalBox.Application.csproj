@@ -11,6 +11,10 @@
     <AssemblyName>PersonalBox.Application</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,9 +35,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Appications\Abstracts\ITransacaoFinanceiraApp.cs" />
-    <Compile Include="Appications\Abstracts\IUserApp.cs" />
+    <Compile Include="Appications\Abstracts\IUsuarioApp.cs" />
     <Compile Include="Appications\TransacaoFinanceiras\TransacaoFinanceiraApp.cs" />
-    <Compile Include="Appications\Users\UserApp.cs" />
+    <Compile Include="Appications\Usuarios\UsuarioApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -49,7 +53,6 @@
   <ItemGroup>
     <Reference Include="System" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

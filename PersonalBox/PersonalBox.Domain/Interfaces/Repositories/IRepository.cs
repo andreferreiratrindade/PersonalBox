@@ -7,8 +7,10 @@ namespace PersonalBox.Domain.Interfaces.Repositories
     {
         void Add(TEntity obj);
         TEntity GetById(int id);
+        TEntity GetById(string id);
         IQueryable<TEntity> All();
         void Update(TEntity obj);
-        void Remove(TEntity obj);   
+        void Remove(TEntity obj);
+        bool Remove(int id);
     }
 }

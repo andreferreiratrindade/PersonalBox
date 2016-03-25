@@ -17,9 +17,12 @@ namespace PersonalBox.Infra.Mapping
             Property(x => x.DataReferencia)
                 .IsRequired();
 
-            HasRequired(x => x.User)
+            Property(x => x.UsuarioId)
+                .HasMaxLength(128);
+
+            HasRequired(x => x.Usuario)
                 .WithMany()
-                .HasForeignKey(x=>x.UserId);
+                .HasForeignKey(x=>x.UsuarioId);
         }
     }
 }

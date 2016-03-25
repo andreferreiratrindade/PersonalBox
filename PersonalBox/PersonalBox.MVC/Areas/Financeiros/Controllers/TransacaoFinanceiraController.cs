@@ -24,7 +24,10 @@ namespace PersonalBox.MVC.Areas.Financeiros.Controllers
             {
                 string UserId = User.Identity.GetUserId();
 
-                TransacaoFinanceiraViewModel vm = _transacaoFinanceiraService.GetIndex(UserId, DateTime.Now);
+                int mes = DateTime.Now.Month;
+                int ano = DateTime.Now.Year;
+
+                TransacaoFinanceiraViewModel vm = _transacaoFinanceiraService.GetIndex(UserId, mes, ano );
 
                 return View(vm);
             }

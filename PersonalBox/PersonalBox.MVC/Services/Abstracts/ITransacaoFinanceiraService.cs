@@ -9,6 +9,6 @@ namespace PersonalBox.MVC.Services.Abstracts
 {
     public interface ITransacaoFinanceiraService
     {
-        TransacaoFinanceiraViewModel GetIndex(string userId, DateTime now);
+        TransacaoFinanceiraViewModel GetIndex(string userId, int mes, int ano);
     }
 }

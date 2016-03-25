@@ -1,2 +1,47 @@
-﻿
+﻿@model PersonalBox.MVC.Areas.Financeiros.Models.TransacaoFinanceiraViewModel
 
+
+<div class="modal fade createTransferenciaModal in" tabindex="-1" role="dialog" aria-hidden="false"
+     style="display: none;">
+    <div class="modal-backdrop fade in" style="height: 443px;"></div>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel2">Nova Transação</h4>
+            </div>
+            <div class="modal-body">
+
+
+
+                @using (Html.BeginForm("Create", "TransacaoFinanceira", FormMethod.Post, new { @class = "form-horizontal form-label-left", role = "form" }))
+                {
+
+               
+
+                            <div class="item form-group bad">
+                                <label class="col-xs-12" for="valor">
+                                    Valor <span class="required">*</span>
+                                </label>
+                                <div class="col-xs-12">
+                               
+                                    <input id="name" class="form-control col-md-7 col-xs-12" data-validate-length-range="6" data-validate-words="2" name="valor" placeholder="Valor" required="required" type="text">
+                                </div>
+                                <div class="alert">please put something here</div>
+                            </div>
+
+                            <div class="ln_solid"></div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <button type="submit" class="btn btn-primary">Cancel</button>
+                                    <button id="send" type="submit" class="btn btn-success">Submit</button>
+                                </div>
+                            </div>
+                }
+           </div>
+        </div>
+    </div>
+</div>

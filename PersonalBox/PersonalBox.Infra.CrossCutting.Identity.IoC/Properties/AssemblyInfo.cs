@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PersonalBox.Infra")]
+[assembly: AssemblyTitle("PersonalBox.Infra.CrossCutting.Identity.IoC")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PersonalBox.Infra")]
+[assembly: AssemblyProduct("PersonalBox.Infra.CrossCutting.Identity.IoC")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("c8f174b6-8508-4d4a-9f59-0d3528c5c5b2")]
+[assembly: Guid("7976a007-6374-4f91-8393-52674dab00a0")]
 
 // Version information for an assembly consists of the following four values:
 //

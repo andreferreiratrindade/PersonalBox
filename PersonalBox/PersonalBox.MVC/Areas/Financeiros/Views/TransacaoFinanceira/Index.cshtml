@@ -1,4 +1,7 @@
-﻿@{
+﻿
+@model PersonalBox.MVC.Areas.Financeiros.Models.TransacaoFinanceiraViewModel
+
+@{
     ViewBag.Title = "Transações Pessoais";
     Layout = "~/Views/Shared/DashBoard/_LayoutDashBoard.cshtml";
 }
@@ -15,12 +18,20 @@
         <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
             <div class="input-group">
 
-                Saldo Atual R$ 1.000,00
+                Saldo Atual R$ <span data-bind="text:SaldoAtual"></span> 
             </div>
         </div>
     </div>
+
+   
 </div>
 <div class="row">
+    <div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".createTransferenciaModal">
+            Nova Transferência
+        </button>
+
+    </div>
     <div class="col-xs-12">
         <div class="x_panel">
             <div class="x_title">
@@ -48,24 +59,64 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>Tipo</th>
+                            <th></th>
                             <th>Valor</th>
                             <th>Data Referência</th>
                             <th>Descrição</th>
                         </tr>
                     </thead>
-                    <tbody data-bind="Transacoes">
-                        <tr class="success">
-                            <td>Crédito</td>
-                            <td>R$ 1.000,00</td>
-                            <td>15/10/2015</td>
-                            <td>Salário</td>
+                    <tbody data-bind='foreach: Transacoes'>
+
+                        <tr data-bind='attr: {class: Tipo == 1 ? "success" : "danger"} '>
+                            <td class="col-xs-1"> 
+                                <i data-bind='attr: {class: Tipo == 1 ? "fa fa-plus-square" : "fa fa-minus-square"} '></i>
+                            </td>
+                            <td class="col-xs-3">
+                              R$  <span data-bind='text: ValorStr'></span>
+                            </td>
+                            <td class="col-xs-3">
+                                <span data-bind='text: DataReferenciaStr'></span>
+                            </td>
+                            <td class="col-xs-5">
+                                <span data-bind='text: Descricao'></span>
+                            </td>
+
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-
 </div>
-  @Scripts.Render("~/bundles/knockout")
+@{Html.RenderPartial("_Create", Model);}
+
+@section scripts{
+
+    @Scripts.Render("~/bundles/knockout")
+    <script type="text/javascript">
+
+        var ViewModel = function () {
+
+            var self = this;
+            self.Valor = ko.observable().extend({
+                required: {
+                    params: true,
+                    message: "Preenchimento obrigatório"
+                },
+                min: {
+                    params: 0,
+                    message: "Valor deve ser maior do que ZERO"
+                }
+            });
+            
+
+            self.Transacoes = ko.observableArray(@Html.Raw(Json.Encode(Model.TransacoesFinanceiras)));
+            self.SaldoAtual = ko.observable(@Html.Raw(Json.Encode(Model.SaldoAtualStr)));
+            self.CriarTransacao = function () {
+
+            }
+        }
+        ko.applyBindings(new ViewModel());
+
+    </script>
+}

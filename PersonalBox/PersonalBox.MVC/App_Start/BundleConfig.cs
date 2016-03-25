@@ -52,46 +52,15 @@ namespace PersonalBox.MVC
                 "~/Scripts/template/gentelella-master/js/parsley/parsley.min.js",
                 "~/Scripts/template/gentelella-master/js/textarea/autosize.min.js",
                 "~/Scripts/template/gentelella-master/js/autocomplete/jquery.autocomplete.js",
-                "~/Scripts/template/gentelella-master/js/custom.js"
+               "~/Scripts/template/gentelella-master/js/chartjs/chart.min.js", 
+                "~/Scripts/template/gentelella-master/js/nicescroll/jquery.nicescroll.min.js",
+                "~/Scripts/template/gentelella-master/js/icheck/icheck.min.js",            
+                "~/Scripts/template/gentelella-master/js/custom.js",
+                 "~/Scripts/template/gentelella-master/js/notify/pnotify.core.js",
+                  "~/Scripts/template/gentelella-master/js/notify/pnotify.buttons.js",
+                   "~/Scripts/template/gentelella-master/js/notify/pnotify.nonblock.js"
                 ));
-            /*
-
-        < script src = "js/bootstrap.min.js" ></ script >
- 
-         < !--chart js-- >
-         < script src = "js/chartjs/chart.min.js" ></ script >
-          
-            < !--bootstrap progress js -->
-          < script src = "js/progressbar/bootstrap-progressbar.min.js" ></ script >
-           < script src = "js/nicescroll/jquery.nicescroll.min.js" ></ script >
-           
-            < !--icheck-- >
-            < script src = "js/icheck/icheck.min.js" ></ script >
             
-            < !--tags-- >
-             < script src = "js/tags/jquery.tagsinput.min.js" ></ script >
-             
-            < !--switchery-- >
-              < script src = "js/switchery/switchery.min.js" ></ script >
-             
-            < !--daterangepicker-- >
-               < script type = "text/javascript" src = "js/moment.min2.js" ></ script >
-                  < script type = "text/javascript" src = "js/datepicker/daterangepicker.js" ></ script >
-                   
-            < !--richtext editor-- >
-                     < script src = "js/editor/bootstrap-wysiwyg.js" ></ script >
-                      < script src = "js/editor/external/jquery.hotkeys.js" ></ script >
-                       < script src = "js/editor/external/google-code-prettify/prettify.js" ></ script >
-                     
-            < !--select2-- >
-                        < script src = "js/select/select2.full.js" ></ script >
-                       
-            < !--form validation-- >
-                         < script type = "text/javascript" src = "js/parsley/parsley.min.js" ></ script >
-                       
-            < !--textarea resize-- >
-                            < script src = "js/textarea/autosize.min.js" ></ script >
-*/
         }
     }
 }

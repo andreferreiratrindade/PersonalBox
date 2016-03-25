@@ -20,11 +20,14 @@ namespace PersonalBox.Infra.Repositories
             return Db.Set<TEntity>().AsQueryable();
         }
 
-      
+        public TEntity GetById(string id)
+        {
+            return Db.Set<TEntity>().Find(id);
+        }
 
         public TEntity GetById(int id)
         {
-            throw new NotImplementedException();
+            return Db.Set<TEntity>().Find(id);
         }
 
         public void Remove(TEntity obj)
@@ -42,7 +45,19 @@ namespace PersonalBox.Infra.Repositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Db.Dispose();
+        }
+
+        public bool Remove(int id)
+        {
+            TEntity obj = Db.Set<TEntity>().Find(id);
+            if (obj != null)
+            {
+                Db.Set<TEntity>().Remove(Db.Set<TEntity>().Find(id));
+                Db.SaveChanges();
+                return true;
+            }
+            return false;
         }
     }
 }

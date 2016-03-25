@@ -1,18 +1,13 @@
 ﻿using PersonalBox.Domain.Entities;
 using PersonalBox.Infra.Mapping;
-using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PersonalBox.Infra.Context
 {
-   public class PersonalBoxContext : DbContext
+    public class PersonalBoxContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Usuario> Users { get; set; }
         public PersonalBoxContext():base("PersonBoxDB")
         {
         }
@@ -36,7 +31,7 @@ namespace PersonalBox.Infra.Context
             modelBuilder.Properties<string>()
                 .Configure(x => x.HasMaxLength(100));
 
-            modelBuilder.Configurations.Add(new UserConfiguration());
+            modelBuilder.Configurations.Add(new UsuarioConfiguration());
             modelBuilder.Configurations.Add(new TransacaoFincanceiraConfiguration());
         }
 
